@@ -1,3 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>something i haven't said</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blush:    #f9e8e8;
+      --petal:    #f2d0d0;
+      --rose:     #d4849a;
+      --deep:     #9c5c6e;
+      --ink:      #5c3a45;
+      --mist:     #fdf5f5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--mist);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', serif;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.5;
+    }
+
+    /* ── PETAL CURSOR ── */
+    .petal-cursor {
+      position: fixed;
+      width: 10px; height: 10px;
+      border-radius: 50% 50% 50% 0;
+      background: var(--rose);
+      opacity: 0.45;
+      pointer-events: none;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transition: transform 0.15s ease, opacity 0.3s;
+      z-index: 9999;
+    }
+
+    /* ── SCROLLING PETALS ── */
+    .floating-petal {
+      position: fixed;
+      font-size: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      animation: drift linear infinite;
+      z-index: 1;
+      color: var(--rose);
+      filter: blur(0.3px);
+    }
+
+    @keyframes drift {
+      0%   { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+      10%  { opacity: 0.35; }
+      90%  { opacity: 0.2; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: radial-gradient(ellipse 80% 70% at 50% 40%, #fce8ec 0%, var(--mist) 100%);
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.05;
+      color: var(--deep);
+      margin: 1.2rem 0 2rem;
+      opacity: 0;
+      animation: fadeUp 1.1s 0.7s forwards;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink);
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s forwards;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0;
+      animation: fadeIn 1s 2s forwards;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 3rem;
+      background: linear-gradient(to bottom, var(--rose), transparent);
+      animation: growLine 1.5s 2.5s ease-out infinite;
+    }
+
+    @keyframes growLine {
+      0%, 100% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%       { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      99%       { transform: scaleY(1); transform-origin: top; opacity: 0; }
+    }
+
+    /* ── MOMENT SECTIONS ── */
+    .moment {
+      background: var(--blush);
+    }
+
+    .moment:nth-child(even) {
+      background: linear-gradient(135deg, #fdf0f0 0%, #fce4e8 100%);
+    }
+
+    .moment-inner {
+      max-width: 640px;
+      text-align: center;
+      position: relative;
+    }
+
+    .moment-number {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .moment-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--deep);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+
+    .moment-body {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      line-height: 2;
+      color: var(--ink);
+    }
+
+    .moment-body em {
+      font-style: italic;
+      color: var(--deep);
+    }
+
+    .ornament {
+      display: block;
+      color: var(--petal);
+      font-size: 2rem;
+      margin: 2.5rem auto;
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* ── DECORATIVE CIRCLES ── */
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--petal) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0.45;
+    }
+
+    /* ── CLOSING ── */
+    #closing {
+      background: radial-gradient(ellipse 100% 80% at 50% 60%, #fce0e6 0%, var(--mist) 100%);
+      text-align: center;
+    }
+
+    .closing-quote {
+      font-size: clamp(1.6rem, 4.5vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--deep);
+      line-height: 1.5;
+      max-width: 580px;
+      margin-bottom: 3rem;
+    }
+
+    .closing-sig {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    .heart-bloom {
+      display: inline-block;
+      font-size: 1.8rem;
+      animation: heartbeat 2.8s ease-in-out infinite;
+      margin: 2rem 0;
+      color: var(--rose);
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14%       { transform: scale(1.18); }
+      28%       { transform: scale(1); }
+      42%       { transform: scale(1.1); }
+      70%       { transform: scale(1); }
+    }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── KEYFRAMES ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeIn {
@@ -34,7 +308,7 @@
   <div class="bg-circle" style="width:300px;height:300px;bottom:-80px;left:-100px;"></div>
 
   <p class="hero-eyebrow">hey, Jhaz</p>
-  <h1 class="hero-title">I hope this<br/>doesn't come<br/>out of nowhere.</h1>
+  <h1 class="hero-title">I hope this<br/>doesn't come<br/>out of nowhere. But please allow me this much.</h1>
   <p class="hero-sub">
     I've never really talked to you.<br/>
     But please allow me this much —<br/>
@@ -194,4 +468,5 @@
   reveals.forEach(r => observer.observe(r));
 </script>
 </body>
-</html>
+    </html>
+    
