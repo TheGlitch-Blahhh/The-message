@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>°-°</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="confession.css"/>
+</head>
+<body>
+
+<div class="aurora"></div>
+<canvas id="star-canvas"></canvas>
+<div id="petals"></div>
+<div class="cursor" id="cur"></div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="moon-wrap">
+    <div class="moon"></div>
+    <div class="moon-ring"></div>
+    <div class="moon-ring2"></div>
+  </div>
+
+  <p class="eyebrow">hey</p>
+  <h1 class="hero-title">I hope this<br/>doesn't come<br/>out of nowhere.</h1>
+  <p class="hero-sub">
+    I've never really talked to you.<br/>
+    But please allow me this much.<br/>
+    I've noticed you.<br/>
+    Even when you don't realize it,<br/>
+    your presence makes everything feel<br/>
+    a little lighter.
+  </p>
+
+  <div class="scroll-hint">
+    scroll
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+<!-- ── 01 ── -->
+<section>
+  <div class="orb" style="width:340px;height:340px;top:-70px;left:-90px;background:radial-gradient(circle,rgba(210,80,130,0.14)0%,transparent 70%);filter:blur(40px);animation-duration:13s;"></div>
+  <div class="moment-inner reveal">
+    <span class="num">— 01 —</span>
+    <h2 class="mtitle">the sky when<br/>it's clear</h2>
+    <p class="mbody">
+      Like the sky when it's clear.<br/>
+      Like the sea at night under the moon.<br/>
+      Or maybe the green of the trees<br/>
+      on a calm afternoon.<br/><br/>
+      That is what your presence feels like.<br/>
+      <em>easy, and full of quiet light.</em>
+    </p>
+    <span class="orn">✦</span>
+    <div class="gdiv"></div>
+  </div>
+</section>
+
+<!-- ── 02 ── -->
+<section>
+  <div class="orb" style="width:400px;height:400px;bottom:-100px;right:-90px;background:radial-gradient(circle,rgba(180,60,120,0.12)0%,transparent 70%);filter:blur(40px);animation-duration:17s;animation-delay:-6s;"></div>
+  <div class="moment-inner reveal">
+    <span class="num">— 02 —</span>
+    <h2 class="mtitle">even among<br/>all the stars</h2>
+    <p class="mbody">
+      Your eyes sparkle like the ocean<br/>
+      under moonlight.<br/><br/>
+      But even among all the stars.<br/>
+      <em>in my eyes, you are the moon.</em><br/><br/>
+      The stars shine, yes.<br/>
+      But the moon is brighter.<br/>
+      It's steady. It draws attention<br/>
+      without trying.<br/>
+      And it feels impossible<br/>
+      to look away from.
+    </p>
+    <span class="orn">✦</span>
+    <div class="gdiv"></div>
+  </div>
+</section>
+
+<!-- ── 03 ── -->
+<section>
+  <div class="orb" style="width:360px;height:360px;top:-50px;right:-70px;background:radial-gradient(circle,rgba(220,90,140,0.13)0%,transparent 70%);filter:blur(40px);animation-duration:15s;animation-delay:-9s;"></div>
+  <div class="moment-inner reveal">
+    <span class="num">— 03 —</span>
+    <h2 class="mtitle">your smile</h2>
+    <p class="mbody">
+      It slips out quietly.<br/><br/>
+      But it has a way of cutting through<br/>
+      the quiet around it —<br/>
+      like <em>starlight breaking through the night sky.</em><br/><br/>
+      And somehow, it makes everything<br/>
+      feel warmer and softer,<br/>
+      even for a moment.
+    </p>
+    <span class="orn">✦</span>
+    <div class="gdiv"></div>
+  </div>
+</section>
+
+<!-- ── 04 ── -->
+<section>
+  <div class="orb" style="width:370px;height:370px;bottom:-70px;left:-70px;background:radial-gradient(circle,rgba(200,70,120,0.13)0%,transparent 70%);filter:blur(40px);animation-duration:19s;animation-delay:-4s;"></div>
+  <div class="moment-inner reveal">
+    <span class="num">— 04 —</span>
+    <h2 class="mtitle">just a small,<br/>honest thing</h2>
+    <p class="mbody">
+      I don't want this to feel heavy<br/>
+      or awkward.<br/><br/>
+      I'm not asking for anything,<br/>
+      and I won't expect anything.<br/><br/>
+      I just wanted to be honest<br/>
+      in a small way,<br/>
+      with a little smile on my face:<br/><br/>
+      <em>I like you.</em>
+    </p>
+    <span class="orn">✦</span>
+    <div class="gdiv"></div>
+  </div>
+</section>
+
+<!-- ── 11:11 CLOCK ── -->
+<section id="clock-sec">
+  <div class="orb" style="width:380px;height:380px;top:-60px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(210,80,130,0.11)0%,transparent 70%);filter:blur(45px);animation-duration:16s;animation-delay:-3s;"></div>
+  <div class="moment-inner reveal" style="text-align:center;">
+    <span class="num">— 11:11 —</span>
+    <div class="clock-wrap">
+      <svg class="clock-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-label="Clock showing 11:11">
+
+        <!-- glow filter -->
+        <defs>
+          <filter id="roseGlow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="handGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- face fill -->
+        <circle cx="150" cy="150" r="143" fill="rgba(17,9,22,0.55)"/>
+
+        <!-- outer rings -->
+        <circle cx="150" cy="150" r="143" fill="none" stroke="rgba(232,160,184,0.55)" stroke-width="1.6"/>
+        <circle cx="150" cy="150" r="135" fill="none" stroke="rgba(232,160,184,0.25)" stroke-width="0.8"/>
+
+        <!-- hour tick marks -->
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(0,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(30,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(60,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(90,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(120,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(150,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(180,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(210,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(240,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(270,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(300,150,150)"/>
+        <line x1="150" y1="10" x2="150" y2="28" stroke="rgba(232,160,184,0.75)" stroke-width="2.2" transform="rotate(330,150,150)"/>
+
+        <!-- minor tick marks (between hours) -->
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(6,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(12,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(18,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(24,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(36,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(42,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(48,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(54,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(66,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(72,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(78,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(84,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(96,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(102,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(108,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(114,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(126,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(132,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(138,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(144,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(156,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(162,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(168,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(174,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(186,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(192,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(198,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(204,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(216,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(222,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(228,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(234,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(246,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(252,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(258,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(264,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(276,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(282,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(288,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(294,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(306,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(312,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(318,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(324,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(336,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(342,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(348,150,150)"/>
+        <line x1="150" y1="12" x2="150" y2="22" stroke="rgba(232,160,184,0.35)" stroke-width="1" transform="rotate(354,150,150)"/>
+
+        <!-- Roman numerals (r=105 from center) -->
+        <text class="rn" x="150"    y="51"    text-anchor="middle" dominant-baseline="middle">XII</text>
+        <text class="rn" x="202.5"  y="60.9"  text-anchor="middle" dominant-baseline="middle">I</text>
+        <text class="rn" x="240.9"  y="99.5"  text-anchor="middle" dominant-baseline="middle">II</text>
+        <text class="rn" x="255"    y="152"   text-anchor="middle" dominant-baseline="middle">III</text>
+        <text class="rn" x="240.9"  y="204.5" text-anchor="middle" dominant-baseline="middle">IV</text>
+        <text class="rn" x="202.5"  y="243.1" text-anchor="middle" dominant-baseline="middle">V</text>
+        <text class="rn" x="150"    y="253"   text-anchor="middle" dominant-baseline="middle">VI</text>
+        <text class="rn" x="97.5"   y="243.1" text-anchor="middle" dominant-baseline="middle">VII</text>
+        <text class="rn" x="59.1"   y="204.5" text-anchor="middle" dominant-baseline="middle">VIII</text>
+        <text class="rn" x="45"     y="152"   text-anchor="middle" dominant-baseline="middle">IX</text>
+        <text class="rn" x="59.1"   y="99.5"  text-anchor="middle" dominant-baseline="middle">X</text>
+        <text class="rn" x="97.5"   y="60.9"  text-anchor="middle" dominant-baseline="middle">XI</text>
+
+        <!-- hour hand — 11:11 → hour angle = 335.5° -->
+        <g filter="url(#handGlow)" transform="rotate(335.5,150,150)">
+          <polygon class="hand-hour" points="150,86 155,138 152,150 150,158 148,150 145,138"/>
+        </g>
+
+        <!-- minute hand — 11 min → angle = 66° -->
+        <g filter="url(#handGlow)" transform="rotate(66,150,150)">
+          <polygon class="hand-min" points="150,60 153.5,138 151,152 150,162 149,152 146.5,138"/>
+        </g>
+
+        <!-- center ornament -->
+        <circle cx="150" cy="150" r="9"   fill="none" stroke="rgba(232,160,184,0.7)" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="5.5" fill="rgba(232,160,184,0.9)"/>
+        <circle cx="150" cy="150" r="2.5" fill="#fff4f8"/>
+
+      </svg>
+    </div>
+    <p class="mbody" style="margin-top:2rem;">
+      At <em>11:11</em>, the world goes quiet<br/>
+      for just a second.<br/><br/>
+      I always use that second<br/>
+      to wish for your attention.
+    </p>
+  </div>
+</section>
+
+<!-- ── CLOSING ── -->
+<section id="closing">
+  <div class="orb" style="width:500px;height:500px;top:-120px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(210,80,130,0.10)0%,transparent 70%);filter:blur(50px);animation-duration:22s;"></div>
+  <div class="reveal" style="text-align:center;position:relative;z-index:1;">
+    <p class="cquote">
+      "If reading this makes you smile<br/>
+      even a little, that would mean<br/>
+      a lot to me.<br/><br/>
+      If not, that's completely fine too.<br/>
+      I just wanted you to know<br/>
+      that someone notices you,<br/>
+      admires you, and thinks you're<br/>
+      <em>truly wonderful.</em>"
+    </p>
+    <span class="heart">♡</span>
+    <p class="csig">Take care &nbsp;—&nbsp; Someone, usually around and admiring you</p>
+  </div>
+</section>
+
+  <script src="confession.js"></script>
+</body>
+</html>
